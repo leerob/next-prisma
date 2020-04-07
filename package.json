@@ -1,0 +1,40 @@
+{
+  "name": "primsa-next",
+  "description": "Static site with Next.js 9.3 and Prisma Photon.",
+  "version": "0.0.0",
+  "author": {
+    "name": "Lee Robinson",
+    "email": "me@leerob.io",
+    "url": "https://leerob.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leerob/prisma-next.git"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "db": "prisma studio --experimental",
+    "db-save": "prisma migrate save --experimental",
+    "db-up": "prisma migrate up --experimental"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^0.7.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@prisma/client": "2.0.0-beta.1",
+    "emotion-theming": "^10.0.27",
+    "next": "^9.3.4",
+    "node-fetch": "^2.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@prisma/cli": "2.0.0-beta.1"
+  }
+}
