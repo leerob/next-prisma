@@ -21,7 +21,8 @@
     "start": "next start",
     "db": "prisma studio --experimental",
     "db-save": "prisma migrate save --experimental",
-    "db-up": "prisma migrate up --experimental"
+    "db-up": "prisma migrate up --experimental",
+    "update": "prisma generate"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.7.0",
