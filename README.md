@@ -7,4 +7,4 @@
 - [Next.js](https://nextjs.org/)
 - [Prisma](https://prisma.io/)
 - [Chakra UI](https://chakra-ui.com/)
-- [Now](https://zeit.co/now)
+- [Vercel](https://vercel.com)
