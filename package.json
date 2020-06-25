@@ -22,19 +22,19 @@
     "db": "prisma studio --experimental",
     "db-save": "prisma migrate save --experimental",
     "db-up": "prisma migrate up --experimental",
-    "update": "prisma generate"
+    "generate": "prisma generate"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.7.0",
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "@prisma/client": "2.0.0-beta.3",
-    "emotion-theming": "^10.0.27",
-    "next": "^9.3.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@chakra-ui/core": "0.8.0",
+    "@emotion/core": "10.0.28",
+    "@emotion/styled": "10.0.27",
+    "@prisma/client": "2.1.1",
+    "emotion-theming": "10.0.27",
+    "next": "9.4.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@prisma/cli": "2.0.0-beta.3"
+    "@prisma/cli": "2.1.1"
   }
 }
