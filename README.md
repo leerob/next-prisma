@@ -1,6 +1,6 @@
 # Prisma + Next.js
 
-> 🚀 Static site with Next.js 9.3 and Prisma.
+> 🚀 Static site with Next.js 9.4 and Prisma.
 
 ## Built With
 
