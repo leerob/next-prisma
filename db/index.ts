@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { NextPage } from 'next';
-import { getSqlite } from '../getSqlite'
+import { getSqlite } from './getSqlite'
 
 export const prisma = new PrismaClient();
 
