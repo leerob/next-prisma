@@ -1,10 +1,9 @@
 import { PrismaClient } from '@prisma/client';
 import { NextPage } from 'next';
-import { getSqlite } from './getSqlite'
+export { getSqlite } from './getSqlite'
 
 export const prisma = new PrismaClient();
 
-export const loadSQLite = getSqlite()
 
 type Unpacked<T> = T extends (infer U)[]
   ? U
