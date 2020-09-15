@@ -1,9 +1,8 @@
-import { PrismaClient } from '@prisma/client';
 import { Box, Heading, Text, Button } from '@chakra-ui/core';
 import NextLink from 'next/link';
+import { prisma, SSRPage } from '../../db';
 
-export async function getStaticProps({ params }) {
-  const prisma = new PrismaClient();
+export const getServerSideProps = async ({ params }) => {
   const song = await prisma.song.findOne({
     include: { artist: true },
     where: {
@@ -18,21 +17,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
-  const prisma = new PrismaClient();
-  const songs = await prisma.song.findMany();
-
-  return {
-    paths: songs.map((song) => ({
-      params: {
-        id: song.id.toString()
-      }
-    })),
-    fallback: false
-  };
-}
-
-export default ({ song }) => (
+const SongPage: SSRPage<typeof getServerSideProps> = ({ song }) => (
   <Box mt={8}>
     <Heading fontWeight="800">{song.name}</Heading>
     <Text color="grey.700" mb={4}>
@@ -53,3 +38,4 @@ export default ({ song }) => (
     </NextLink>
   </Box>
 );
+export default SongPage

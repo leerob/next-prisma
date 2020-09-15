@@ -7,7 +7,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ThemeProvider>
       <Head>
-        <title>Next.js 9.3 + Prisma</title>
+        <title>Next.js 9.5 + Prisma</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Component {...pageProps} />
