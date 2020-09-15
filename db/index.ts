@@ -1,9 +1,21 @@
 import { PrismaClient } from '@prisma/client';
 import { NextPage } from 'next';
-export { getSqlite } from './getSqlite'
+import { getSqlite } from './getSqlite';
 
 export const prisma = new PrismaClient();
 
+export async function ssrPrisma(){
+  const sqlite = await getSqlite()
+  const db = `file:${sqlite}`
+  const prisma = new PrismaClient({
+    datasources: {
+      db: { 
+        url: db
+      },
+    },
+  })
+  return prisma
+}
 
 type Unpacked<T> = T extends (infer U)[]
   ? U
