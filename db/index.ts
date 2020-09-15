@@ -10,7 +10,7 @@ type Unpacked<T> = T extends (infer U)[]
   : T extends Promise<infer U>
   ? U
   : T;
-
+//@ts-ignore
 export type SSRProps<T> = Unpacked<ReturnType<T>>['props'];
 
 export type SSRPage<T> = NextPage<SSRProps<T>>;
