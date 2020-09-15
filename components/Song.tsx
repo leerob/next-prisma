@@ -1,4 +1,4 @@
-import { ListItem, Image, Flex, Text, Stack, Heading } from '@chakra-ui/core';
+import { Flex, Heading, Image, ListItem, Stack, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
 
 const Song = ({ id, name, artist, albumCoverUrl }) => (
@@ -9,7 +9,7 @@ const Song = ({ id, name, artist, albumCoverUrl }) => (
     my={2}
     bg="white"
   >
-    <NextLink href={`/songs/[id]`} as={`/songs/${id}`} passHref>
+    <NextLink href={`/ssr-songs/[id]`} as={`/ssr-songs/${id}`} passHref>
       <Flex as="a">
         <Image
           size="100px"

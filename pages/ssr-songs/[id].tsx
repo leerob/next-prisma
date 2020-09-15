@@ -17,7 +17,7 @@ export const getServerSideProps = async ({ params }) => {
   };
 }
 
-const SongPage: SSRPage<typeof getServerSideProps> = ({ song }) => (
+const SongPage: SSRPage<typeof getServerSideProps> = ({song}) => (
   <Box mt={8}>
     <Heading fontWeight="800">{song.name}</Heading>
     <Text color="grey.700" mb={4}>
