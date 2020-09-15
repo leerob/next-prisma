@@ -29,13 +29,16 @@
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
     "@prisma/client": "2.6.2",
+    "download": "^8.0.0",
     "emotion-theming": "10.0.27",
     "next": "9.5.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "tempy": "^0.7.0"
   },
   "devDependencies": {
     "@prisma/cli": "2.6.2",
+    "@types/download": "^6.2.4",
     "@types/node": "^14.10.1",
     "typescript": "^4.0.2"
   }

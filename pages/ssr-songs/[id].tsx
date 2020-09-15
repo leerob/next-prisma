@@ -1,8 +1,9 @@
 import { Box, Heading, Text, Button } from '@chakra-ui/core';
 import NextLink from 'next/link';
-import { prisma, SSRPage } from '../../db';
+import { loadSQLite, prisma, SSRPage } from '../../db';
 
 export const getServerSideProps = async ({ params }) => {
+  await loadSQLite()
   const song = await prisma.song.findOne({
     include: { artist: true },
     where: {

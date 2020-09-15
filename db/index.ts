@@ -1,7 +1,10 @@
 import { PrismaClient } from '@prisma/client';
 import { NextPage } from 'next';
+import { getSqlite } from '../getSqlite'
 
 export const prisma = new PrismaClient();
+
+export const loadSQLite = getSqlite()
 
 type Unpacked<T> = T extends (infer U)[]
   ? U
@@ -14,3 +17,4 @@ type Unpacked<T> = T extends (infer U)[]
 export type SSRProps<T> = Unpacked<ReturnType<T>>['props'];
 
 export type SSRPage<T> = NextPage<SSRProps<T>>;
+
