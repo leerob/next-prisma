@@ -5,15 +5,20 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  output   = "../client"
 }
 
 model Song {
-  id            Int     @default(autoincrement()) @id
+  id            Int       @default(autoincrement()) @id
   name          String
   youtubeId     String?
+  test          String    @default("Test")
+  testing       String    @default("Test")
   albumCoverUrl String?
-  artist        Artist? @relation(fields: [artistId], references: [id])
+  artist        Artist?   @relation(fields: [artistId], references: [id])
   artistId      Int?
+  Playlist      Playlist? @relation(fields: [playlistId], references: [id])
+  playlistId    Int?
 }
 
 model Artist {
@@ -24,7 +29,7 @@ model Artist {
 }
 
 model Playlist {
-  id    Int     @default(autoincrement()) @id
-  name  String  @unique
+  id    Int    @default(autoincrement()) @id
+  name  String @unique
   songs Song[]
 }

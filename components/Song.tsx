@@ -9,6 +9,7 @@ const Song = ({ id, name, artist, albumCoverUrl }) => (
     my={2}
     bg="white"
   >
+    
     <NextLink href={`/ssr-songs/[id]`} as={`/ssr-songs/${id}`} passHref>
       <Flex as="a">
         <Image

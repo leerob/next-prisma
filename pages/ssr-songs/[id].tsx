@@ -1,9 +1,10 @@
-import { Box, Heading, Text, Button } from '@chakra-ui/core';
+import { Box, Button, Heading, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
-import { ssrPrisma, SSRPage } from '../../db';
-
+import { PrismaClient } from '../../client';
+import { SSRPage } from '../../db';
+const asdasdasdasdas = 'sadanh;';
 export const getServerSideProps = async ({ params }) => {
-  const prisma = await ssrPrisma()
+  const prisma = new PrismaClient();
   const song = await prisma.song.findOne({
     include: { artist: true },
     where: {
@@ -16,13 +17,16 @@ export const getServerSideProps = async ({ params }) => {
       song
     }
   };
-}
+};
 
-const SongPage: SSRPage<typeof getServerSideProps> = ({song}) => (
+const SongPage: SSRPage<typeof getServerSideProps> = ({ song }) => (
   <Box mt={8}>
     <Heading fontWeight="800">{song.name}</Heading>
     <Text color="grey.700" mb={4}>
       {song.artist.name}
+    </Text>
+    <Text color="grey.700" mb={4} style={{ wordWrap: 'break-word' }}>
+      {JSON.stringify(song)}
     </Text>
     <iframe
       width="100%"
@@ -39,4 +43,4 @@ const SongPage: SSRPage<typeof getServerSideProps> = ({song}) => (
     </NextLink>
   </Box>
 );
-export default SongPage
+export default SongPage;

@@ -1,7 +1,7 @@
-import { PrismaClient } from '@prisma/client';
-import { Box, Heading, Text, Button } from '@chakra-ui/core';
+import { Box, Button, Heading, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
-import { prisma } from '../../db';
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 
 export async function getStaticProps({ params }) {
   const song = await prisma.song.findOne({

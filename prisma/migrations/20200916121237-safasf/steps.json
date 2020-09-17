@@ -1,0 +1,30 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteField",
+      "model": "Song",
+      "field": "test"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Song",
+      "field": "testing"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Song",
+      "field": "human"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Song",
+      "field": "nomu"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Song",
+      "field": "nomuuuuu"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-import { List, Heading } from '@chakra-ui/core';
-
+import { Heading, List } from '@chakra-ui/core';
+import { PrismaClient } from '@prisma/client';
 import Song from '../components/Song';
-import { prisma } from '../db';
 
+const prisma = new PrismaClient();
 export async function getStaticProps() {
   const songs = await prisma.song.findMany({
     include: { artist: true }
@@ -14,7 +14,6 @@ export async function getStaticProps() {
     }
   };
 }
-
 export default ({ songs }) => (
   <>
     <Heading mt={8} mb={4} fontWeight="800">
