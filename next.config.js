@@ -1,12 +1,3 @@
-const PrismaClientReloaderPlugin = require('./plugin');
+const withPrismaPlugin = require('next-prisma-plugin');
 
-exports.webpack = (config) =>
-  Object.assign(config, {
-    plugins: [
-      ...config.plugins,
-      new PrismaClientReloaderPlugin()
-    ],
-    watchOptions: {
-      ignored: ['**/.git/**', '**/.next/**']
-    }
-  });
+module.exports = withPrismaPlugin();

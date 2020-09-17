@@ -22,6 +22,8 @@
     "db": "prisma studio --experimental",
     "db-save": "prisma migrate save --experimental",
     "db-up": "prisma migrate up --experimental",
+    "push": "prisma migrate save --experimental --name Dev && prisma migrate up --experimental && prisma generate",
+    "remove-migrations": "sqlite3 prisma/dev.db 'delete from _Migration'",
     "generate": "prisma generate"
   },
   "dependencies": {
@@ -32,7 +34,8 @@
     "chokidar": "^3.4.2",
     "download": "^8.0.0",
     "emotion-theming": "10.0.27",
-    "next": "file:/home/will/Prisma/next.js/packages/next",
+    "next": "^9.5.3",
+    "next-prisma-plugin": "0.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tempy": "^0.7.0"
@@ -41,8 +44,6 @@
     "@prisma/cli": "2.7.0",
     "@types/download": "^6.2.4",
     "@types/node": "^14.10.1",
-    "clean-webpack-plugin": "^3.0.0",
-    "typescript": "^4.0.2",
-    "webpack-clear-require-cache-plugin": "^0.0.4"
+    "typescript": "^4.0.2"
   }
 }

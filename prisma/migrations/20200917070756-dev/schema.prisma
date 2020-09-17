@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:dev.db"
+  url = "***"
 }
 
 model Song {
@@ -13,6 +13,7 @@ model Song {
   youtubeId     String?
   albumCoverUrl String?
   artistId      Int?
+  test          String    @default("Test")
   playlistId    Int?
   artist        Artist?   @relation(fields: [artistId], references: [id])
   Playlist      Playlist? @relation(fields: [playlistId], references: [id])

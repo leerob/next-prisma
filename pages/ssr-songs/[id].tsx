@@ -1,8 +1,6 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
-import { PrismaClient } from '../../client';
-import { SSRPage } from '../../db';
-const asdasdasdasdas = 'sadanh;';
+import { PrismaClient } from '@prisma/client';
 export const getServerSideProps = async ({ params }) => {
   const prisma = new PrismaClient();
   const song = await prisma.song.findOne({
@@ -19,7 +17,7 @@ export const getServerSideProps = async ({ params }) => {
   };
 };
 
-const SongPage: SSRPage<typeof getServerSideProps> = ({ song }) => (
+const SongPage= ({ song }) => (
   <Box mt={8}>
     <Heading fontWeight="800">{song.name}</Heading>
     <Text color="grey.700" mb={4}>
