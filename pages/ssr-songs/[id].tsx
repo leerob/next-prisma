@@ -2,7 +2,7 @@ import { Box, Button, Heading, Text } from '@chakra-ui/core';
 import NextLink from 'next/link';
 import { PrismaClient } from '@prisma/client';
 import React from 'react';
-import Auth from '../../components/Auth';
+import Auth from '../../components/Layout/Header';
 export const getServerSideProps = async ({ params }) => {
   const prisma = new PrismaClient();
   const song = await prisma.song.findOne({
@@ -21,7 +21,6 @@ export const getServerSideProps = async ({ params }) => {
 
 const SongPage= ({ song }) => (
   <Box mt={8}>
-    <Auth/>
     <Heading fontWeight="800">{song.name}</Heading>
     <Text color="grey.700" mb={4}>
       {song.artist.name}
