@@ -1,7 +1,7 @@
 {
   "name": "prisma-next",
   "description": "Static site with Next.js 9.3 and Prisma.",
-  "version": "0.0.0",
+  "version": "0.0.0-dripip",
   "author": {
     "name": "Lee Robinson",
     "email": "me@leerob.io",
@@ -34,15 +34,19 @@
     "chokidar": "^3.4.2",
     "download": "^8.0.0",
     "emotion-theming": "10.0.27",
+    "klona": "^2.0.4",
     "next": "^9.5.3",
-    "next-prisma-plugin": "0.0.1",
+    "next-auth": "^3.1.0",
+    "next-prisma-plugin": "^0.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "swr": "^0.3.2",
     "tempy": "^0.7.0"
   },
   "devDependencies": {
     "@prisma/cli": "2.7.0",
     "@types/download": "^6.2.4",
+    "@types/next-auth": "^3.1.7",
     "@types/node": "^14.10.1",
     "typescript": "^4.0.2"
   }
