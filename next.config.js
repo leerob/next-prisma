@@ -1,3 +1,3 @@
-const withPrismaPlugin = require('next-prisma-plugin');
+const withPrismaPlugin = require('../dist');
 
 module.exports = withPrismaPlugin();

@@ -1,7 +1,7 @@
 {
   "name": "prisma-next",
   "description": "Static site with Next.js 9.3 and Prisma.",
-  "version": "0.0.0",
+  "version": "0.0.0-dripip",
   "author": {
     "name": "Lee Robinson",
     "email": "me@leerob.io",
@@ -27,6 +27,7 @@
     "generate": "prisma generate"
   },
   "dependencies": {
+    "eslint-plugin-next-prisma": "file:../",
     "@chakra-ui/core": "0.8.0",
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
@@ -35,9 +36,10 @@
     "download": "^8.0.0",
     "emotion-theming": "10.0.27",
     "next": "^9.5.3",
-    "next-prisma-plugin": "0.0.1",
+    "next-prisma-plugin": "^0.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "swr": "^0.3.2",
     "tempy": "^0.7.0"
   },
   "devDependencies": {

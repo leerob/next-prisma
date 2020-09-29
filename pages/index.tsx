@@ -1,28 +1,22 @@
 import { Heading, List } from '@chakra-ui/core';
 import { PrismaClient } from '@prisma/client';
+import useSWR from 'swr';
 import Song from '../components/Song';
 
-const prisma = new PrismaClient();
-export async function getStaticProps() {
-  const songs = await prisma.song.findMany({
-    include: { artist: true }
-  });
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-  return {
-    props: {
-      songs
-    }
-  };
-}
-export default ({ songs }) => (
-  <>
-    <Heading mt={8} mb={4} fontWeight="800">
-      My Songs
-    </Heading>
-    <List>
-      {songs.map((song) => (
-        <Song key={song.id} {...song} />
-      ))}
-    </List>
-  </>
-);
+export default () => {
+  const { data: songs } = useSWR('/api/songs', fetcher);
+  return (
+    <>
+      <Heading mt={8} mb={4} fontWeight="800">
+        My Songs
+      </Heading>
+      <List>
+        {songs && songs.map((song) => (
+          <Song key={song.id} {...song} />
+        ))}
+      </List>
+    </>
+  );
+};
