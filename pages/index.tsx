@@ -1,5 +1,4 @@
 import { Heading, List } from '@chakra-ui/core';
-import { PrismaClient } from '@prisma/client';
 import useSWR from 'swr';
 import Song from '../components/Song';
 

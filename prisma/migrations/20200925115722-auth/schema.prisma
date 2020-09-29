@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:dev.db"
+  url = "***"
 }
 model Account {
   id                 Int       @default(autoincrement()) @id
@@ -65,7 +65,6 @@ model Song {
   name          String
   youtubeId     String?
   albumCoverUrl String?
-  test          String    @default("Test")
   artistId      Int?
   playlistId    Int?
   artist        Artist?   @relation(fields: [artistId], references: [id])
