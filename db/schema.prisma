@@ -1,0 +1,83 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+  output        = "../db"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 Int       @id @default(autoincrement())
+  userId             Int
+  user               User      @relation(fields: [userId])
+  providerType       String
+  providerId         String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@unique([providerId, providerAccountId])
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  user         User     @relation(fields: [userId])
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  accounts      Account[]
+  sessions      Session[]
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model VerificationRequest {
+  id         Int      @id @default(autoincrement())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Song {
+  id            Int       @id @default(autoincrement())
+  name          String
+  youtubeId     String?
+  albumCoverUrl String?
+  test          String    @default("Test")
+  artistId      Int?
+  playlistId    Int?
+  artist        Artist?   @relation(fields: [artistId], references: [id])
+  Playlist      Playlist? @relation(fields: [playlistId], references: [id])
+}
+
+model Artist {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  genre String?
+  songs Song[]
+}
+
+model Playlist {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  songs Song[]
+}

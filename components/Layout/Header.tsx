@@ -3,7 +3,7 @@ import Auth from './Auth';
 
 export default function Header() {
   return (
-    <div style={{ marginLeft: 'auto' }}>
+    <div style={{width: '100%'}}>
       <Auth />
     </div>
   );

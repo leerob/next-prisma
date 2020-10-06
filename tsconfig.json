@@ -30,6 +30,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx", "pages/ssr-songs/[id].jsx"
   ]
 }

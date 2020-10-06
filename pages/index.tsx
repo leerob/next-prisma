@@ -4,7 +4,7 @@ import Song from '../components/Song';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default () => {
+export default (props) => {
   const { data: songs } = useSWR('/api/songs', fetcher);
   return (
     <>

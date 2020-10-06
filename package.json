@@ -19,34 +19,36 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "db": "prisma studio --experimental",
-    "db-save": "prisma migrate save --experimental",
-    "db-up": "prisma migrate up --experimental",
-    "push": "prisma migrate save --experimental --name Dev && prisma migrate up --experimental && prisma generate",
-    "remove-migrations": "sqlite3 prisma/dev.db 'delete from _Migration'",
-    "generate": "prisma generate"
+    "db": "dotenv -- prisma studio --experimental",
+    "doctor": "dotenv -- prisma doctor",
+    "db:save": "dotenv -- prisma migrate save --experimental --name dev",
+    "db:up": "dotenv -- prisma migrate up --experimental",
+    "db:generate": "dotenv -- prisma generate",
+    "push": "yarn db:save & yarn db:up && yarn db:generate"
   },
   "dependencies": {
     "@chakra-ui/core": "0.8.0",
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
-    "@prisma/client": "2.7.0",
+    "@prisma/client": "2.9.0-integration-nextjs-custom-output.2",
     "chokidar": "^3.4.2",
     "download": "^8.0.0",
     "emotion-theming": "10.0.27",
     "klona": "^2.0.4",
     "next": "^9.5.3",
-    "next-prisma-plugin": "file:../",
+    "next-auth": "^3.1.0",
+    "next-prisma-plugin": "^0.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "swr": "^0.3.2",
-    "tempy": "^0.7.0"
+    "swr": "^0.3.5",
+    "tempy": "^0.7.1"
   },
   "devDependencies": {
-    "@prisma/cli": "2.7.0",
+    "dotenv-cli": "^4.0.0",
+    "@prisma/cli": "2.9.0-integration-nextjs-custom-output.2",
     "@types/download": "^6.2.4",
-    "@types/next-auth": "^3.1.7",
-    "@types/node": "^14.10.1",
-    "typescript": "^4.0.2"
+    "@types/next-auth": "^3.1.8",
+    "@types/node": "^14.11.2",
+    "typescript": "^4.0.3"
   }
 }
