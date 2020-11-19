@@ -90,17 +90,12 @@ const config = {
     "output": "F:\\Practice WEB_dev\\Practice Lockdown\\Prisma-Next.js\\next-prisma\\Prisma\\Studio\\-Practice WEB_dev-Practice Lockdown-Prisma-Next.js-next-prisma",
     "isCustomOutput": true
   },
-  "sqliteDatasourceOverrides": [
-    {
-      "name": "db",
-      "url": "..\\..\\dev.db"
-    }
-  ],
+  "sqliteDatasourceOverrides": [],
   "relativePath": "..\\..",
   "internalDatasources": [
     {
       "name": "db",
-      "connectorType": "sqlite"
+      "connectorType": "postgresql"
     }
   ],
   "clientVersion": "2.1.1",
