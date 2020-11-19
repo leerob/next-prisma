@@ -9,7 +9,7 @@ const addSong = () => {
       method: 'POST',
       body: JSON.stringify({ ...song })
     });
-    // router.push('/');
+    router.push('/');
   };
   return (
     <>
