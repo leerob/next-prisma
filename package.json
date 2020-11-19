@@ -25,14 +25,21 @@
     "generate": "prisma generate"
   },
   "dependencies": {
+    "@chakra-ui/color-mode": "^1.0.0",
     "@chakra-ui/core": "0.8.0",
+    "@chakra-ui/icons": "^1.0.0",
+    "@chakra-ui/react": "^1.0.0",
     "@emotion/core": "10.0.28",
+    "@emotion/react": "^11.1.0",
     "@emotion/styled": "10.0.27",
     "@prisma/client": "2.1.1",
     "emotion-theming": "10.0.27",
+    "firebase": "^8.0.2",
+    "framer-motion": "^2.9.4",
     "next": "9.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-icons": "^3.11.0"
   },
   "devDependencies": {
     "@prisma/cli": "2.1.1"

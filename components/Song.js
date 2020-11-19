@@ -1,4 +1,12 @@
-import { ListItem, Image, Flex, Text, Stack, Heading } from '@chakra-ui/core';
+import {
+  ListItem,
+  Image,
+  Flex,
+  Text,
+  Stack,
+  Heading,
+  Badge
+} from '@chakra-ui/core';
 import NextLink from 'next/link';
 
 const Song = ({ id, name, artist, albumCoverUrl }) => (
@@ -23,7 +31,11 @@ const Song = ({ id, name, artist, albumCoverUrl }) => (
         <Stack mt={4}>
           <Heading size="lg" fontWeight="500">
             {name}
+            <Badge mx="2" color="gray.700" bg="gray.200">
+              {artist.genre}
+            </Badge>
           </Heading>
+
           <Text color="gray.700">{artist.name}</Text>
         </Stack>
       </Flex>

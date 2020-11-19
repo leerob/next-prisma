@@ -1,0 +1,6 @@
+# Prisma Migrate lockfile v1
+
+20201112100506-initial
+20201118195756-user-table
+20201119083353-remove-user
+20201119105216-remove-unique
