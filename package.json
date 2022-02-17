@@ -30,7 +30,7 @@
     "@emotion/styled": "10.0.27",
     "@prisma/client": "2.1.1",
     "emotion-theming": "10.0.27",
-    "next": "11.1.1",
+    "next": "12.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
